@@ -1,20 +1,18 @@
 class Solution {
     fun removeDuplicates(nums: IntArray): Int {
-        val list = ArrayList<Int>()
-        var k = 0
+        var k = 1
+        var u = 0
         
-        list.add(nums[0])
-        k++
-        
-        for (i in 1..nums.size-1) {
-            if (nums[i] != nums[i-1]) {
-                list.add(nums[i])
-                k++
+        for (i in 0..nums.size-1) {
+            nums[i] = nums[u]
+            
+            while (u < nums.size-1) {
+                u++
+                if (nums[u] != nums[i]) {
+                    k++
+                    break
+                }
             }
-        }
-        
-        for (i in 0..list.size-1) {
-            nums[i] = list[i]
         }
         
         return k
