@@ -21,19 +21,19 @@ class Solution {
                         y = pair.first
                         x = pair.second 
                         
-                        if (x+1 < n && y < m && grid[y][x+1] == '1' && visited[y][x+1] == false) {
+                        if (x+1 < n && grid[y][x+1] == '1' && visited[y][x+1] == false) {
                             deque.add(Pair(y, x+1))
                             visited[y][x+1] = true
                         }
-                        if (x-1 >= 0 && y < m && grid[y][x-1] == '1' && visited[y][x-1] == false) {
+                        if (x-1 >= 0 && grid[y][x-1] == '1' && visited[y][x-1] == false) {
                             deque.add(Pair(y, x-1))
                             visited[y][x-1] = true
                         }
-                        if (y+1 < m && x < n && grid[y+1][x] == '1' && visited[y+1][x] == false) {
+                        if (y+1 < m && grid[y+1][x] == '1' && visited[y+1][x] == false) {
                             deque.add(Pair(y+1, x))
                             visited[y+1][x] = true
                         }
-                        if (y-1 >= 0 && x < n && grid[y-1][x] == '1' && visited[y-1][x] == false) {
+                        if (y-1 >= 0 && grid[y-1][x] == '1' && visited[y-1][x] == false) {
                             deque.add(Pair(y-1, x))
                             visited[y-1][x] = true
                         }
